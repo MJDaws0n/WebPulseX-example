@@ -1,1 +1,189 @@
-hjnv
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* Global styles */
+        * {
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        
+        /* Desktop navigation */
+        .navbar-desktop {
+            background-color: #f8f8f8;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .navbar-desktop a {
+            font-size: 20px;
+            text-decoration: none;
+            color: black;
+            border: 1px solid black;
+            padding: 5px 10px;
+            margin-right: 10px;
+        }
+        
+        .navbar-desktop a:hover {
+            background-color: #e6e6e6;
+        }
+        
+        /* Mobile navigation */
+        .navbar-mobile {
+            display: none;
+        }
+        
+        .navbar-toggle {
+            background-color: #f8f8f8;
+            border: none;
+            color: black;
+            font-size: 20px;
+            padding: 10px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+        }
+        
+        .navbar-toggle span {
+            width: 30px;
+            height: 5px;
+            background-color: black;
+            display: block;
+            margin-bottom: 5px;
+        }
+        
+        .navbar-menu {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100vh;
+            width: 100%;
+            background-color: #f8f8f8;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .navbar-menu.active {
+            display: block;
+        }
+        
+        .navbar-menu a {
+            display: block;
+            font-size: 20px;
+            text-decoration: none;
+            color: black;
+            padding: 5px 0;
+            margin-bottom: 10px;
+        }
+        
+        /* Main content */
+        .content {
+            padding: 50px;
+            text-align: center;
+        }
+        
+        h1 {
+            font-size: 70px;
+            margin-bottom: 30px;
+        }
+        
+        p {
+            font-size: 40px;
+            margin-bottom: 50px;
+        }
+        
+        /* Footer */
+        .footer {
+            background-color: #f8f8f8;
+            padding: 20px;
+            text-align: center;
+            font-size: 16px;
+        }
+        
+        /* Media Queries */
+        @media (max-width: 768px) {
+            .navbar-desktop {
+                display: none;
+            }
+            
+            .navbar-mobile {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                background-color: #f8f8f8;
+                padding: 10px;
+            }
+            
+            .navbar-toggle {
+                display: flex;
+            }
+            
+            .navbar-menu {
+                position: static;
+                width: auto;
+            }
+            
+            .navbar-menu.active {
+                position: fixed;
+                display: block;
+                z-index: 999;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Desktop navigation -->
+    <div class="navbar-desktop">
+        <a href="/">Home</a>
+        <a href="/login">Login</a>
+        <a href="/signup">Signup</a>
+        <a href="/store">Store</a>
+        <a href="https://panel.ahourshosting.com/auth/login">Panel</a>
+        <a href="/logout.html">Logout</a>
+    </div>
+    
+    <!-- Mobile navigation -->
+    <div class="navbar-mobile">
+        <div class="navbar-toggle" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="navbar-menu">
+            <a href="/">Home</a>
+            <a href="/login">Login</a>
+            <a href="/signup">Signup</a>
+            <a href="/store">Store</a>
+            <a href="https://panel.ahourshosting.com/auth/login">Panel</a>
+            <a href="/logout.html">Logout</a>
+        </div>
+    </div>
+    
+    <!-- Main content -->
+    <div class="content">
+        <h1>After Hours Hosting</h1>
+        <p>Welcome to After Hours Hosting.</p>
+    </div>
+    
+    <!-- Footer -->
+    <div class="footer">
+        &copy; 2023 After Hours Hosting. All rights reserved.
+    </div>
+    
+    <script>
+        function toggleMenu() {
+            var menu = document.querySelector('.navbar-menu');
+            menu.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
