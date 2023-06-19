@@ -37,18 +37,22 @@
         
         /* Mobile navigation */
         .navbar-mobile {
-            background-color: #f8f8f8;
-            padding: 10px;
+            display: none;
         }
         
-        .navbar-mobile .navbar-toggle {
+        .navbar-toggle {
+            background-color: #f8f8f8;
+            border: none;
+            color: black;
+            font-size: 20px;
+            padding: 10px;
+            cursor: pointer;
             display: flex;
             align-items: center;
-            justify-content: space-between;
-            cursor: pointer;
+            justify-content: flex-end;
         }
         
-        .navbar-mobile .navbar-toggle span {
+        .navbar-toggle span {
             width: 30px;
             height: 5px;
             background-color: black;
@@ -56,15 +60,11 @@
             margin-bottom: 5px;
         }
         
-        .navbar-mobile .navbar-menu {
+        .navbar-menu {
             display: none;
         }
         
-        .navbar-mobile .navbar-menu.active {
-            display: block;
-        }
-        
-        .navbar-mobile .navbar-menu a {
+        .navbar-menu a {
             display: block;
             font-size: 20px;
             text-decoration: none;
@@ -95,6 +95,33 @@
             padding: 20px;
             text-align: center;
             font-size: 16px;
+        }
+        
+        /* Media Queries */
+        @media (max-width: 768px) {
+            .navbar-desktop {
+                display: none;
+            }
+            
+            .navbar-mobile {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                background-color: #f8f8f8;
+                padding: 10px;
+            }
+            
+            .navbar-toggle {
+                display: flex;
+            }
+            
+            .navbar-menu {
+                display: none;
+            }
+            
+            .navbar-menu.active {
+                display: block;
+            }
         }
     </style>
 </head>
