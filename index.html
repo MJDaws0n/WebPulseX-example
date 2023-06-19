@@ -65,11 +65,12 @@
             position: fixed;
             top: 0;
             left: 0;
-            height: 100vh;
             width: 100%;
+            height: 100%;
             background-color: #f8f8f8;
             padding: 20px;
             text-align: center;
+            z-index: 999;
         }
         
         .navbar-menu.active {
@@ -128,14 +129,13 @@
             }
             
             .navbar-menu {
-                position: static;
-                width: auto;
+                position: fixed;
+                width: 100%;
+                height: 100%;
             }
             
             .navbar-menu.active {
-                position: fixed;
                 display: block;
-                z-index: 999;
             }
         }
     </style>
